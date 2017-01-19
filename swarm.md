@@ -63,6 +63,14 @@ sshfs -o allow_other,auto_unmount root@<shared-vm IP>:/local-shared /shared
 *ask your instructor for the root paassword*
 Now all users will have access to /shared 
 
+* Now something cool! test writing your name to a file in the shared area via a docker container:
+```bash
+docker run --rm -v /shared/:/shared/ busybox sh -c "echo your-name >> /shared/users.txt"
+```
+* Test it again and this time, run the container through swarm:
+```bash
+docker run -H <local-IP>:6000 --rm -v /shared/:/shared/ busybox sh -c "echo your-name >> /shared/users.txt"
+```
 Useful info:
 * To unmount: ``fusermount -u /shared``
 * To activate auto-mount the shared disk at startup: 

@@ -44,7 +44,7 @@ A modified guide of [This repo](https://github.com/apetkau/galaxy-hackathon-2014
  …
  <tools>
          <tool id="smalt_wrapper (docker)" destination="docker_local"/>
-         <tool id="bedtools_clusterbed" destination="docker_local"/>
+      
  </tools>
 
    ```
@@ -56,8 +56,22 @@ A modified guide of [This repo](https://github.com/apetkau/galaxy-hackathon-2014
    Then add a new section for this tool:
    
    ```xml
-   <section id="docker" name="Docker tools">
-    <tool file="docker/smalt_wrapper.xml"/>
+  <section id="docker" name="Docker tools">
+      <tool file="docker/smalt_wrapper.xml"/>
   </section>
    ```
  * Go to **2. Installing Tool configuration** in [this repo](https://github.com/apetkau/galaxy-hackathon-2014/tree/master/smalt) and follow the guide
+ 
+Enable Galaxy to use BioContainers (Docker)
+-------------------------------------------
+This is a very cool feature where Galaxy automatically detects that your tool has an associated docker image, pulls it and runs it for you. These images (when available) have been generated using [mulled](https://github.com/mulled). To test, install the [IUC bedtools](https://toolshed.g2.bx.psu.edu/repository?repository_id=8d84903cc667dbe7&changeset_revision=7b3aaff0d78c) from the toolshed. When you try to execute *ClusterBed* for example. You may get a missing dependancy error for *bedtools*. But bedtools has an associated docker image on [quay.io](https://quay.io/). Add the following to ``tool_conf.xml``:
+<tools>
+         ....
+         <tool id="bedtools_clusterbed" destination="docker_local"/>
+ </tools>
+
+When you execute the tool again, Galaxy will pull the image from Biocontainers ([quay.io/biocontainers](https://quay.io/organization/biocontainers)), run the tool inside of this container to produce the desired output.
+ 
+Galaxy with Docker swarm
+-------------------------
+Install and configure sawrm [here](swarm.md)

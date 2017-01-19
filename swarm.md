@@ -32,7 +32,14 @@ docker run -H <local-IP>:6000 info
 
 Shared disk between VMs using sshfs
 ------------------------------------
-We have a VM *shared-vm* where we have the shared disk. Now in Your VM (as root):
+We have a VM *shared-vm* where we have the shared disk. This is how to configure it *(already done)*:
+As root:
+- create a directory to share: ``/local-shared``
+- set ``PasswordAuthentication yes`` in ``/etc/ssh/sshd_config``
+- Restart the sshd service: ``service sshd restart``
+- set a password for root
+
+Now in Your VM (as root):
 * ``yum install sshfs``
 * uncomment “user_allow_other” in ``/etc/fuse.conf``
 * Create a directory to mount the shared area and attach the volume ``sshfs``:

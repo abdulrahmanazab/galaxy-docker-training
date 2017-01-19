@@ -13,7 +13,9 @@ usermod -aG docker cloud-user
 exit
 exit
 ```
-Install your Galaxy on the front end VM
+Now login again!
+
+Install your Galaxy on the front end VM:
  ```
 mkdir your-first-name
 cd your-first-name

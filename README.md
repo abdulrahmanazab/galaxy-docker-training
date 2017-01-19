@@ -1,5 +1,18 @@
 # Galaxy Docker Training
 
+Login to your VM
+
+```bash
+ssh -i docker-tutorial.pem cloud-user@<front-end-vm-ip>
+[cloud-user@gfront-end-vm ~]$ ssh -i docker-tutorial.pem <your-vm-ip>
+```
+Add yourself to the ``docker`` group:
+```bash
+sudo -i
+usermod -aG docker cloud-user
+exit
+exit
+```
 Install your Galaxy on the front end VM
  ```
 mkdir your-first-name

@@ -1,5 +1,24 @@
 # galaxy-docker-training
 
+Install your Galaxy on the front end VM
+ ```
+mkdir your-first-name
+cd your-first-name
+git clone -b dev https://github.com/galaxyproject/galaxy.git
+```
+Edit ``galaxy.ini``:
+```
+cd galaxy
+cp config/galaxy.ini.sample config/galaxy.ini
+vim config/galaxy.ini
+...
+port = <your-port-number>
+host = 0.0.0.0
+```
+Start Galaxy:
+```
+./run.sh --daemon
+```
 Galaxy docker integration
 ---------------------------
 A modified guide of [This repo](https://github.com/apetkau/galaxy-hackathon-2014/edit/master/README.md)
@@ -41,4 +60,4 @@ A modified guide of [This repo](https://github.com/apetkau/galaxy-hackathon-2014
     <tool file="docker/smalt_wrapper.xml"/>
   </section>
    ```
-   * Go to **2. Installing Tool configuration** in [this repo](https://github.com/apetkau/galaxy-hackathon-2014/tree/master/smalt) and follow the guide
+ * Go to **2. Installing Tool configuration** in [this repo](https://github.com/apetkau/galaxy-hackathon-2014/tree/master/smalt) and follow the guide

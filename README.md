@@ -1,4 +1,4 @@
-# Galaxy Docker Training
+# Galaxy Docker Training (hosted by [cPouta](https://research.csc.fi/cpouta))
 
 Login to your VM
 

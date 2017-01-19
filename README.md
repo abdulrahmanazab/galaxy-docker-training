@@ -75,3 +75,9 @@ When you execute the tool again, Galaxy will pull the image from Biocontainers (
 Galaxy with Docker swarm
 -------------------------
 Install and configure sawrm [here](swarm.md)
+To let Galaxy submit jobs to swarm:
+* Add/uncomment the following line in ``job_conf.xml``within the docker destination section:
+```xml
+<param id="docker_host">tcp://your-local-ip:6000</param>
+```
+* Place Galaxy's database directory inside the shared area ``/shared``

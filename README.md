@@ -1,4 +1,4 @@
-# galaxy-docker-training
+# Galaxy Docker Training
 
 Install your Galaxy on the front end VM
  ```

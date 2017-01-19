@@ -51,4 +51,10 @@ sshfs -o allow_other,auto_unmount root@<shared-vm IP>:/local-shared /shared
 *ask your instructor for the root paassword*
 Now all users will have access to /shared 
 
-To unmount: ``fusermount -u /shared``
+Useful info:
+* To unmount: ``fusermount -u /shared``
+* To activate auto-mount the shared disk at startup: 
+Add the following line to ``/etc/crontab``: 
+```bash
+@reboot sshfs -o allow_other,auto_unmount root@<shared-vm IP>:/local-shared /shared 
+```

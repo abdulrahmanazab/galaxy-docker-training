@@ -1,4 +1,4 @@
-# Installing Galaxy on CentOS 6.6
+# Install Galaxy on CentOS 6.6
 
 The default python version for CentOS 6.x is 2.6.x and Galaxy require Python 2.7 to start. Here is how to install Python 2.7 on CentOS 6.6.
 
